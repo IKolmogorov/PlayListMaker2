@@ -36,8 +36,14 @@ android {
 }
 
 dependencies {
+    val core_version = "1.13.1"
 
-    implementation(libs.androidx.core.ktx)
+    // Java language implementation
+    implementation("androidx.core:core:$core_version")
+    // Kotlin
+    implementation("androidx.core:core-ktx:$core_version")
+
+    //implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -45,4 +51,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Glide
+    implementation(libs.glide) //"com.github.bumptech.glide:glide:4.14.2"
+    annotationProcessor(libs.compiler) //"com.github.bumptech.glide:compiler:4.14.2"
+
+    //Retrofit
+    implementation(libs.retrofit) //"com.squareup.retrofit2:retrofit:2.9.0"
+    implementation(libs.converter.gson) //"com.squareup.retrofit2:converter-gson:2.9.0"
 }

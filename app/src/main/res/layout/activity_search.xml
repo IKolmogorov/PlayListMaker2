@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+    <LinearLayout
+        style="@style/otherActivityLinearLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/HeaderLinearLayoutStyle">
+
+            <FrameLayout
+                android:id="@+id/return_frame"
+                style="@style/HeaderImageFrameStyle">
+
+                <ImageView
+                    android:id="@+id/return_image"
+                    style="@style/ArrowBackImageViewStyle" />
+
+            </FrameLayout>
+
+            <FrameLayout style="@style/HeaderFrameStyle">
+
+                <TextView
+                    style="@style/HeaderTextViewStyle"
+                    android:text="@string/search_title" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <FrameLayout style="@style/SearchFrameStyle">
+
+            <EditText
+                android:id="@+id/search_editText"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                style="@style/SearchEditTextStyle" />
+
+            <ImageView
+                android:id="@+id/search_clear_imageView"
+                style="@style/ClearImageViewStyle" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trackList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/search_no_results_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/search_no_results_image"
+                    android:src="?attr/searchNoResultsDrawable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+
+                <TextView
+                    style="@style/SearchPlaceHolderTextViewStyle"
+                    android:layout_height="20dp"
+                    android:layout_width="312dp"
+                    android:text="@string/search_no_results_placeholder_text"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/search_error_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/search_error_image"
+                    android:src="?attr/searchErrorDrawable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+
+                <TextView
+                    style="@style/SearchPlaceHolderTextViewStyle"
+                    android:layout_height="88dp"
+                    android:layout_width="312dp"
+                    android:text="@string/search_error_placeholder_text"/>
+
+                <Button
+                    style="@style/SearchErrorButtonStyle"
+                    android:id="@+id/search_error_refresh_button"
+                    android:layout_width="91dp"
+                    android:layout_height="36dp"/>
+            </FrameLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
