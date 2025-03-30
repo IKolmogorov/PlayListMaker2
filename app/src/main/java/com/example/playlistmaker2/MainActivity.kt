@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+const val PREFERENCES = "app_settings"
+const val DARK_THEME = "setting_dark_theme"
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +22,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
+        (applicationContext as App).switchTheme(darkThemeEnabled)
 
         val searchButton = findViewById<Button>(R.id.open_search)
         searchButton.setOnClickListener {
