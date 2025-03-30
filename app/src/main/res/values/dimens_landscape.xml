@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SEARCH RESULTS -->
+    <dimen name="search_result_error_image_margin_top">0dp</dimen>
+    <dimen name="search_result_error_text_margin_top">114dp</dimen>
+    <dimen name="search_result_error_button_margin_top">200dp</dimen>
+</resources>

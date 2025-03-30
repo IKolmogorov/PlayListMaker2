@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">PlayListMaker2</string>
+    <string name="app_name">Playlist maker</string>
+    <string name="search_title">Поиск</string>
+    <string name="media_library_title">Медиатека</string>
+    <string name="settings_title">Настройки</string>
+    <string name="dark_theme_title">Темная тема</string>
+    <string name="share_title">Поделиться приложением</string>
+    <string name="write_to_support_title">Написать в поддержку</string>
+    <string name="user_agreement_title">Пользовательское соглашение</string>
+
+    <string name="share_body">Ссылка на курс по Android-разработке на Яндекс.Практикум: https://practicum.yandex.ru/android-developer/</string>
+
+    <string name="write_to_support_subject">Сообщение разработчикам приложения Playlist Maker</string>
+    <string name="write_to_support_body">Спасибо разработчикам за крутое приложение!</string>
+    <string name="support_email">ia.kolmogorov@yandex.ru</string>
+
+    <string name="user_agreement_url">https://yandex.ru/legal/practicum_offer/</string>
+
+    <string name="search_hint">Поиск</string>
+    <string name="album_artwork_description">Album artwork</string>
+    <string name="open_search_result_image_view_description">Open search result</string>
+    <string name="dot_divider_description">Dot</string>
+    <string name="search_no_results_placeholder_text">Ничего не нашлось</string>
+    <string name="search_error_placeholder_text">Проблемы со связью\n\nЗагрузка не удалась. Проверьте\nподключение к интернету</string>
+    <string name="search_error_button_text">Обновить</string>
+
 </resources>
