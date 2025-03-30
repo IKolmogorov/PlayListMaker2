@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        style="@style/otherActivityLinearLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/HeaderLinearLayoutStyle">
+
+            <FrameLayout
+                android:id="@+id/return_frame"
+                style="@style/HeaderImageFrameStyle">
+
+                <ImageView
+                    android:id="@+id/return_image"
+                    style="@style/ArrowBackImageViewStyle" />
+
+            </FrameLayout>
+
+            <FrameLayout style="@style/HeaderFrameStyle">
+
+                <TextView
+                    style="@style/HeaderTextViewStyle"
+                    android:text="@string/settings_title" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MenuItemsLinearLayoutStyle">
+
+            <FrameLayout
+                android:id="@+id/darkThemeFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <TextView
+                    style="@style/MenuItemTextViewStyle"
+                    android:text="@string/dark_theme_title"/>
+
+                <Switch
+                    android:id="@+id/theme_switch"
+                    style="@style/SwitchStyle" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/shareFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <TextView
+                    style="@style/MenuItemTextViewStyle"
+                    android:text="@string/share_title" />
+
+                <ImageView
+                    style="@style/MenuItemIconImageViewStyle"
+                    android:src="@drawable/share" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/writeToSupportFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <TextView
+                    style="@style/MenuItemTextViewStyle"
+                    android:text="@string/write_to_support_title" />
+
+                <ImageView
+                    style="@style/MenuItemIconImageViewStyle"
+                    android:src="@drawable/support" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/userAgreementFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <TextView
+                    style="@style/MenuItemTextViewStyle"
+                    android:text="@string/user_agreement_title" />
+
+                <ImageView
+                    style="@style/MenuItemIconImageViewStyle"
+                    android:src="@drawable/arrow_forward" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
