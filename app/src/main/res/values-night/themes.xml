@@ -1,7 +1,42 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.PlayListMaker2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.PlaylistMaker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <!-- Activities background -->
+        <item name="mainActivityBackgroundColor">@color/black</item>
+        <item name="otherActivityBackgroundColor">@color/black</item>
+
+        <item name="menuItemIconTint">@color/white</item>
+
+        <item name="textOnBackgroundColor">@color/white</item>
+        <item name="textColor">@color/white</item>
+
+        <item name="switcherThumbTint">@color/blue</item>
+        <item name="switcherTrackTint">@color/blue_light</item>
+
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color: Button -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+
+        <!-- Edit text attributes -->
+        <item name="editTextHintColor">@color/black</item>
+        <item name="editTextDrawableTint">@color/black</item>
+        <item name="editTextBackgroundDrawable">@drawable/rounded_edittext_night</item>
+
+        <!-- Search result attributes -->
+        <item name="dotColor">@color/white</item>
+        <item name="arrowColor">@color/white</item>
+        <item name="searchResultMainTextColor">@color/white</item>
+        <item name="searchResultAdditionalTextColor">@color/white</item>
+        <item name="searchNoResultsDrawable">@drawable/search_no_results_dark_mode</item>
+        <item name="searchErrorDrawable">@drawable/search_error_dark_mode</item>
     </style>
 </resources>

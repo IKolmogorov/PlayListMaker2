@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TEXT SIZE -->
+    <dimen name="screen_title_text_size">22sp</dimen>
+    <dimen name="button_title_text_size">22sp</dimen>
+    <dimen name="menu_item_title_text_size">16sp</dimen>
+    <dimen name="search_result_text_size">16sp</dimen>
+    <dimen name="search_result_small_text_size">11sp</dimen>
+
+    <!-- FONT WEIGHT -->
+    <dimen name="header_font_weight">500</dimen>
+    <dimen name="menu_item_font_weight">400</dimen>
+
+    <!-- PADDING SIZE -->
+    <dimen name="padding_top">14dp</dimen>
+    <dimen name="padding_horizontal">16dp</dimen>
+    <dimen name="padding_bottom">28dp</dimen>
+
+    <dimen name="padding_from_header_to_content">40dp</dimen>
+    <dimen name="padding_from_icon_to_button_title">8dp</dimen>
+    <dimen name="padding_between_buttons">16dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+
+    <!-- VIEW HEIGHT -->
+    <dimen name="header_layout_size">56dp</dimen>
+    <dimen name="header_layout_height">48dp</dimen>
+
+<!--    <dimen name="from_title_to_content_padding_size">24dp</dimen>-->
+    <!--<dimen name="from_content_to_bottom_padding_size">28dp</dimen>-->
+    <dimen name="button_corner_radius">16dp</dimen>
+    <dimen name="small_icon_size">24dp</dimen>
+    <dimen name="big_icon_size">48dp</dimen>
+    <dimen name="menu_item_height">61dp</dimen>
+    <dimen name="editText_height">36dp</dimen>
+
+    <!-- HEADER SIZE -->
+    <dimen name="header_frame_padding">12dp</dimen>
+    <dimen name="header_frame_size">48dp</dimen>
+    <dimen name="header_text_padding_top">10dp</dimen>
+
+    <!-- ALBUM ARTWORK -->
+    <dimen name="artwork_size">45dp</dimen>
+    <dimen name="artwork_corner_radius">2dp</dimen>
+    <dimen name="search_page_small_margin">8dp</dimen>
+    <dimen name="artwork_margin_start">13dp</dimen>
+    <dimen name="search_result_linear_layout_height">32dp</dimen>
+    <dimen name="search_result_track_name_height">19dp</dimen>
+    <dimen name="search_result_artist_name_height">13dp</dimen>
+    <dimen name="search_result_item_view_height">61dp</dimen>
+    <dimen name="search_result_item_view_margin_start">5dp</dimen>
+    <dimen name="open_search_result_frame_width">44dp</dimen>
+
+    <!-- SEARCH RESULTS -->
+    <dimen name="search_result_error_image_margin_top">102dp</dimen>
+    <dimen name="search_result_error_text_margin_top">238dp</dimen>
+    <dimen name="search_result_error_button_margin_top">350dp</dimen>
+
+</resources>

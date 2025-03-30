@@ -1,9 +1,43 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.PlayListMaker2" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.PlaylistMaker" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
 
-    <style name="Theme.PlayListMaker2" parent="Base.Theme.PlayListMaker2" />
+        <!-- Activities background -->
+        <item name="mainActivityBackgroundColor">@color/blue</item>
+        <item name="otherActivityBackgroundColor">@color/white</item>
+
+        <item name="menuItemIconTint">@color/gray</item>
+
+        <item name="textOnBackgroundColor">@color/white</item>
+        <item name="textColor">@color/black</item>
+
+        <item name="switcherThumbTint">@color/gray</item>
+        <item name="switcherTrackTint">@color/gray</item>
+
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Secondary brand color: Button -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+
+        <!-- Edit text attributes -->
+        <item name="editTextHintColor">@color/gray</item>
+        <item name="editTextDrawableTint">@color/gray</item>
+        <item name="editTextBackgroundDrawable">@drawable/rounded_edittext</item>
+
+        <!-- Search result attributes -->
+        <item name="dotColor">@color/gray</item>
+        <item name="arrowColor">@color/gray</item>
+        <item name="searchResultMainTextColor">@color/black</item>
+        <item name="searchResultAdditionalTextColor">@color/gray</item>
+        <item name="searchNoResultsDrawable">@drawable/search_no_results_light_mode</item>
+        <item name="searchErrorDrawable">@drawable/search_error_light_mode</item>
+
+    </style>
 </resources>
