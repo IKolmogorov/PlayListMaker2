@@ -1,6 +1,7 @@
 package com.example.playlistmaker2
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,6 +42,7 @@ class SearchActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
         val returnFrameLayout = findViewById<FrameLayout>(R.id.return_frame)
         val searchEditText = findViewById<EditText>(R.id.search_editText)
         val clearButton = findViewById<ImageView>(R.id.search_clear_imageView)
@@ -95,6 +98,10 @@ class SearchActivity : AppCompatActivity() {
 
         searchEditText.addTextChangedListener(searchTextWatcher)
 
+        showTracksSearchHistory(sharedPreferences, recyclerView) //TODO "Должен быть другой RecyclerView"
+
+
+
     }
 
     fun showSearchResults(trackSearchResultsType: TrackSearchResultsType, recyclerView: RecyclerView){
@@ -104,8 +111,23 @@ class SearchActivity : AppCompatActivity() {
         when (trackSearchResultsType){
             TrackSearchResultsType.SUCCESS -> {
 
-                val trackAdapter = TrackAdapter(trackList)
-                recyclerView.adapter = trackAdapter
+//
+
+                // определяем слушателя нажатия элемента в списке
+                val stateClickListener: TrackAdapter.OnTrackClickListener =
+                    object : TrackAdapter.OnTrackClickListener {
+                        override fun onTrackClick(track: Track, position: Int) {
+                            Toast.makeText(
+                                applicationContext, "Был выбран пункт " + track.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+                // создаем адаптер
+                val adapter: TrackAdapter = TrackAdapter(trackList, stateClickListener)
+                recyclerView.adapter = adapter
+
 
                 recyclerView.visibility = View.VISIBLE
                 searchErrorPlaceholderFrame.visibility = View.GONE
@@ -131,6 +153,43 @@ class SearchActivity : AppCompatActivity() {
                 searchNoResultsPlaceholderFrame.visibility = View.GONE
             }
         }
+    }
+
+    fun showTracksSearchHistory(sharedPreferences: SharedPreferences, recyclerView: RecyclerView)
+    {
+        val stringTextList = sharedPreferences.getString(TRACKS_SEARCH_HISTORY, "")
+
+        if (stringTextList != null && stringTextList != ""){
+            val trackSearchHistoryArray: Array<Track> = Gson().fromJson(stringTextList, Array<Track>::class.java)
+            val trackSearchHistoryList = trackSearchHistoryArray.toMutableList()
+            if (trackSearchHistoryList.size > 0) {
+
+                // определяем слушателя нажатия элемента в списке
+                val stateClickListener: TrackAdapter.OnTrackClickListener =
+                    object : TrackAdapter.OnTrackClickListener {
+                        override fun onTrackClick(track: Track, position: Int) {
+                            Toast.makeText(
+                                applicationContext, "Был выбран пункт " + track.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+                // создаем адаптер
+                val adapter: TrackAdapter = TrackAdapter(trackSearchHistoryList, stateClickListener)
+
+                // устанавливаем для списка адаптер
+                recyclerView.adapter = adapter
+
+
+               val trackAdapter = TrackAdapter(trackSearchHistoryList)
+                recyclerView.adapter = trackAdapter
+                recyclerView.visibility = View.VISIBLE
+
+            }
+        }
+
+
     }
 
     fun getTrackSearchResults(searchTrackService : ItunesApi, expression: String, recyclerView: RecyclerView) {

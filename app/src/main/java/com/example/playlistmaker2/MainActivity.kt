@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 const val PREFERENCES = "app_settings"
 const val DARK_THEME = "setting_dark_theme"
+const val TRACKS_SEARCH_HISTORY = "tracks_search_history"
 
 class MainActivity : AppCompatActivity() {
 
