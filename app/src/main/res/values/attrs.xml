@@ -22,4 +22,6 @@
     <attr name="searchNoResultsDrawable" format="reference" />
     <attr name="searchErrorDrawable" format="reference" />
 
+    <attr name="currentThemeSwitcherTitle" format="string" />
+
 </resources>
