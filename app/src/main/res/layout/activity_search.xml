@@ -35,7 +35,8 @@
         </LinearLayout>
 
 
-        <FrameLayout style="@style/SearchFrameStyle">
+        <FrameLayout android:id="@+id/searchInputFrame"
+            style="@style/SearchFrameStyle">
 
             <EditText
                 android:id="@+id/search_editText"
@@ -48,9 +49,10 @@
                 style="@style/ClearImageViewStyle" />
         </FrameLayout>
 
-        <FrameLayout
+        <FrameLayout android:id="@+id/searchResultsFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:paddingTop="16dp">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -58,54 +60,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-            <FrameLayout
-                android:id="@+id/search_no_results_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/search_no_results_image"
-                    android:src="?attr/searchNoResultsDrawable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
-
-                <TextView
-                    style="@style/SearchPlaceHolderTextViewStyle"
-                    android:layout_height="20dp"
-                    android:layout_width="312dp"
-                    android:text="@string/search_no_results_placeholder_text"/>
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/search_error_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/search_error_image"
-                    android:src="?attr/searchErrorDrawable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
-
-                <TextView
-                    style="@style/SearchPlaceHolderTextViewStyle"
-                    android:layout_height="88dp"
-                    android:layout_width="312dp"
-                    android:text="@string/search_error_placeholder_text"/>
-
-                <Button
-                    style="@style/SearchErrorButtonStyle"
-                    android:id="@+id/search_error_refresh_button"
-                    android:layout_width="91dp"
-                    android:layout_height="36dp"/>
-            </FrameLayout>
         </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/searchHistoryFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/YouSearchedText"
+                style="@style/SearchPlaceHolderTextViewStyle"
+                android:layout_width="312dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/search_history_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trackHistorySearchList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/history_reset_button"
+                style="@style/SearchHistoryResetButtonStyle"
+                android:layout_width="148dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <FrameLayout android:id="@+id/search_no_results_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/search_no_results_image"
+                android:src="?attr/searchNoResultsDrawable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+
+            <TextView
+                style="@style/SearchPlaceHolderTextViewStyle"
+                android:layout_height="20dp"
+                android:layout_width="312dp"
+                android:text="@string/search_no_results_placeholder_text"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/search_error_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/search_error_image"
+                android:src="?attr/searchErrorDrawable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+
+            <TextView
+                style="@style/SearchPlaceHolderTextViewStyle"
+                android:layout_height="88dp"
+                android:layout_width="312dp"
+                android:text="@string/search_error_placeholder_text"/>
+
+            <Button
+                style="@style/SearchErrorButtonStyle"
+                android:id="@+id/search_error_refresh_button"
+                android:layout_width="91dp"
+                android:layout_height="36dp"/>
+        </FrameLayout>
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

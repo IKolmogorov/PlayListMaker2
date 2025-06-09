@@ -13,7 +13,7 @@
         <item name="textColor">@color/black</item>
 
         <item name="switcherThumbTint">@color/gray</item>
-        <item name="switcherTrackTint">@color/gray</item>
+        <item name="switcherTrackTint">@color/gray_light</item>
 
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/blue</item>
@@ -38,6 +38,8 @@
         <item name="searchResultAdditionalTextColor">@color/gray</item>
         <item name="searchNoResultsDrawable">@drawable/search_no_results_light_mode</item>
         <item name="searchErrorDrawable">@drawable/search_error_light_mode</item>
+
+        <item name="currentThemeSwitcherTitle">Темная тема</item>
 
     </style>
 </resources>
