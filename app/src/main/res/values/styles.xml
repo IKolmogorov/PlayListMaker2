@@ -31,6 +31,10 @@
         <item name="cornerRadius">@dimen/button_corner_radius</item>
     </style>
 
+    <style name="TintedNavigation" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">?attr/blackLight_white</item>
+    </style>
+
     <!-- SETTINGS ACTIVITY STYLES -->
     <style name="MenuItemFrameStyle">
         <item name="android:layout_height">@dimen/menu_item_height</item>
@@ -242,6 +246,68 @@
 
     </style>
 
+    <style name="TextView_YS_Regular_13_gray_gray">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textFontWeight">400</item>>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextView_YS_Regular_13_black_white">
+        <item name="android:textColor">?attr/blackLight_white</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textFontWeight">400</item>>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextView_YS_Medium_22_black_white">
+        <item name="android:textColor">?attr/blackLight_white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textFontWeight">400</item>>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextView_YS_Medium_14_400_black_white">
+        <item name="android:textColor">?attr/blackLight_white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textFontWeight">400</item>>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextView_YS_Medium_14_500_black_white">
+        <item name="android:textColor">?attr/blackLight_white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textFontWeight">500</item>>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ImageButton_black_white" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:tintMode">src_in</item>
+        <item name="android:tint">?attr/blackLight_white</item>
+    </style>
+
+    <style name="ImageButton_grayLight_grayDark" parent="@style/Widget.AppCompat.Button.Borderless">
+
+    </style>
+
+
+
+
     <!-- MULTI USAGE STYLES -->
     <style name="otherActivityLinearLayoutStyle">
         <item name="android:layout_width">match_parent</item>
@@ -263,5 +329,9 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_gravity">end</item>
     </style>
+
+
+
+
 
 </resources>

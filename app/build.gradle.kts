@@ -7,6 +7,10 @@ android {
     namespace = "com.example.playlistmaker2"
     compileSdk = 35
 
+    dataBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.playlistmaker2"
         minSdk = 29
@@ -26,6 +30,12 @@ android {
             )
         }
     }
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
