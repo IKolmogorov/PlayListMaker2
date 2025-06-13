@@ -99,6 +99,10 @@ class SearchActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 clearButton.visibility = clearButtonVisibility(s)
+
+                if (s.toString().isEmpty()) {
+                    showSearchResults(TrackSearchResultsType.EMPTY, sharedPreferences)
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {

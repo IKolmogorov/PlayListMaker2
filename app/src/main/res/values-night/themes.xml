@@ -4,8 +4,8 @@
         <!-- Customize your light theme here. -->
 
         <!-- Activities background -->
-        <item name="mainActivityBackgroundColor">@color/black</item>
-        <item name="otherActivityBackgroundColor">@color/black</item>
+        <item name="mainActivityBackgroundColor">@color/YP_Black</item>
+        <item name="otherActivityBackgroundColor">@color/YP_Black</item>
 
         <item name="menuItemIconTint">@color/white</item>
 
@@ -44,7 +44,8 @@
 
         <item name="secondaryButtonColor">@color/white</item>
         <item name="blackLight_white">@color/white</item>
-        <item name="white_blackLight">@color/black_light</item>
+<!--        <item name="white_blackLight">@color/black_light</item>-->
+        <item name="white_blackLight">@color/YP_Black</item>
 
         <item name="addQueueDrawable">@drawable/icon_add_night</item>
         <item name="addToFavouriteDrawable">@drawable/icon_like_night</item>

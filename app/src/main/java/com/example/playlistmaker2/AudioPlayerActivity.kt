@@ -10,14 +10,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
-import com.example.playlistmaker2.databinding.ActivityAudioPlayerBinding
 import com.google.gson.Gson
 
 
 class AudioPlayerActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityAudioPlayerBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +25,8 @@ class AudioPlayerActivity : AppCompatActivity() {
             insets
         }
 
-        binding = ActivityAudioPlayerBinding.inflate(layoutInflater)
-
         val curTrackString = intent.getStringExtra("curTrack")
-        val curTrack =  Gson().fromJson(curTrackString, Track::class.java)
+        val curTrack = Gson().fromJson(curTrackString, Track::class.java)
 
         val albumImage = findViewById<ImageView>(R.id.albumImage)
         val artistName = findViewById<TextView>(R.id.artistName)
@@ -43,25 +37,24 @@ class AudioPlayerActivity : AppCompatActivity() {
         val year = findViewById<TextView>(R.id.year)
         val country = findViewById<TextView>(R.id.country)
 
-        binding.apply {
 
-            if (curTrack != null) {
-                artistName.setText(curTrack?.artistName.toString())
-                trackName.setText(curTrack?.trackName.toString())
-                fullTrackTime.setText(curTrack.getFullTrackTime())
-                album.setText(curTrack?.collectionName.toString())
-                genre.setText(curTrack?.primaryGenreName.toString())
-                year.setText(curTrack.getReleaseYear())
-                country.setText(curTrack?.country.toString())
+        if (curTrack != null) {
 
-                Glide.with(this@AudioPlayerActivity)
-                    .load(curTrack.getCoverArtwork())
-                    .placeholder(R.drawable.placeholder)
-                    .centerCrop()
-                    .into(albumImage)
+            artistName.text = curTrack.artistName
+            trackName.text = curTrack.trackName
+            fullTrackTime.text = curTrack.getFullTrackTime()
+            album.text = curTrack.collectionName
+            genre.text = curTrack.primaryGenreName
+            year.text = curTrack.getReleaseYear()
+            country.text = curTrack.country
 
-                }
-            }
+            Glide.with(this@AudioPlayerActivity)
+                .load(curTrack.getCoverArtwork())
+                .placeholder(R.drawable.placeholder)
+                .centerCrop()
+                .into(albumImage)
+
+        }
 
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)

@@ -44,7 +44,8 @@
 
         <item name="secondaryButtonColor">@color/black_light</item>
         <item name="blackLight_white">@color/black_light</item>
-        <item name="white_blackLight">@color/white</item>
+<!--        <item name="white_blackLight">@color/white</item>-->
+        <item name="white_blackLight">@color/YP_White</item>
 
         <item name="addQueueDrawable">@drawable/icon_add</item>
         <item name="addToFavouriteDrawable">@drawable/icon_like</item>
