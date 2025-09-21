@@ -10,4 +10,7 @@
     <color name="black_light">#1A1B22</color>
 
     <color name="white2">#FFFFFFFF</color>
+
+    <color name="YP_White">#FFFFFF</color>
+    <color name="YP_Black">#1A1B22</color>
 </resources>

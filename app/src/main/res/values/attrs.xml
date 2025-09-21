@@ -21,7 +21,14 @@
 
     <attr name="searchNoResultsDrawable" format="reference" />
     <attr name="searchErrorDrawable" format="reference" />
+    <attr name="addQueueDrawable" format="reference" />
+    <attr name="addToFavouriteDrawable" format="reference" />
+    <attr name="ArrowBackDrawable" format="reference" />
 
     <attr name="currentThemeSwitcherTitle" format="string" />
+
+    <attr name="secondaryButtonColor" format="color" />
+    <attr name="blackLight_white" format="color" />
+    <attr name="white_blackLight" format="color" />
 
 </resources>

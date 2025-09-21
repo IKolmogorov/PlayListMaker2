@@ -34,4 +34,5 @@ class TrackAdapter(private var tracks: MutableList<Track>) : RecyclerView.Adapte
     override fun getItemCount(): Int {
         return tracks.size
     }
+
 }

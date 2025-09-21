@@ -25,5 +25,14 @@
     <string name="search_error_button_text">Обновить</string>
     <string name="search_history_reset_button_text">Очистить историю</string>
     <string name="search_history_title">Вы искали</string>
+    <string name="yearTitle">Год</string>
+    <string name="trackTimeExample">0:30</string>
+    <string name="playButtonDescription">Play/pause Button</string>
+    <string name="addToFavouriteButtonDescription">Add to favourite Button</string>
+    <string name="GenreTilte">Жанр</string>
+    <string name="fullTrackTimeTitle">Длительность</string>
+    <string name="countryTitle">Страна</string>
+    <string name="albumTitle">Альбом</string>
+    <string name="addToQueueButtonDescription">Add to queue Button</string>
 
 </resources>

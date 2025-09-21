@@ -1,6 +1,8 @@
 package com.example.playlistmaker2
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -25,8 +27,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
-        (applicationContext as App).switchTheme(darkThemeEnabled)
+
+        if (sharedPreferences.contains(DARK_THEME)) {
+            val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
+            (applicationContext as App).switchTheme(darkThemeEnabled)
+        }
+        else
+        {
+            sharedPreferences.edit()
+                .putBoolean(DARK_THEME, isNightModeEnabled(this))
+                .apply()
+        }
 
         val searchButton = findViewById<Button>(R.id.open_search)
         searchButton.setOnClickListener {
@@ -46,5 +57,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(displayIntent)
         }
 
+    }
+
+    fun isNightModeEnabled(context: Context): Boolean {
+        val resources = context.resources
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        return currentNightMode == Configuration.UI_MODE_NIGHT_YES
     }
 }

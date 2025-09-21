@@ -99,6 +99,10 @@ class SearchActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 clearButton.visibility = clearButtonVisibility(s)
+
+                if (s.toString().isEmpty()) {
+                    showSearchResults(TrackSearchResultsType.EMPTY, sharedPreferences)
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -154,14 +158,14 @@ class SearchActivity : AppCompatActivity() {
             TrackSearchResultsType.NO_RESULTS -> {
                 searchResultFrame.visibility                = View.GONE
                 searchHistoryFrame.visibility               = View.GONE
-                searchErrorPlaceholderFrame.visibility      = View.VISIBLE
-                searchNoResultsPlaceholderFrame.visibility  = View.GONE
+                searchErrorPlaceholderFrame.visibility      = View.GONE
+                searchNoResultsPlaceholderFrame.visibility  = View.VISIBLE
             }
             TrackSearchResultsType.ERROR -> {
                 searchResultFrame.visibility                = View.GONE
                 searchHistoryFrame.visibility               = View.GONE
-                searchErrorPlaceholderFrame.visibility      = View.GONE
-                searchNoResultsPlaceholderFrame.visibility  = View.VISIBLE
+                searchErrorPlaceholderFrame.visibility      = View.VISIBLE
+                searchNoResultsPlaceholderFrame.visibility  = View.GONE
             }
         }
     }
@@ -196,9 +200,13 @@ class SearchActivity : AppCompatActivity() {
             object : TrackAdapter.OnTrackClickListener {
                 override fun onTrackClick(track: Track, position: Int) {
 
-                    //trackSearchHistoryList.add(track)
                     updateTrackList(trackSearchHistoryList, track)
                     sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistoryList)).apply()
+
+                    val displayIntent = Intent(this@SearchActivity, AudioPlayerActivity::class.java).apply {
+                        putExtra("curTrack", Gson().toJson(track))
+                    }
+                    startActivity(displayIntent)
 
                 }
             }
